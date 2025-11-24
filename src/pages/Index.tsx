@@ -3,7 +3,6 @@ import { Sparkles, MoreVertical, Move } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Navigation from "@/components/Navigation";
-import glowingOrbHands from "@/assets/glowing-orb-hands.png";
 
 const Index = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -21,7 +20,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-background noise-bg">
+    <div className="relative min-h-screen w-full bg-background noise-bg">
       <Navigation />
       
       {/* Radial gradient overlay */}
@@ -75,45 +74,16 @@ const Index = () => {
               <span className="text-muted-foreground">Developer</span>
             </div>
 
-            {/* Main Portfolio heading with glowing orb */}
+            {/* Main Portfolio heading */}
             <div className="relative">
               <h1 className="font-heading text-8xl font-black tracking-tight md:text-9xl lg:text-[12rem]">
-                {/* Split Portfolio into parts for the orb effect */}
                 <span className="relative inline-block">
-                  {["P", "o", "r", "t", "f"].map((letter, i) => (
+                  {["P", "o", "r", "t", "f", "o", "l", "i", "o"].map((letter, i) => (
                     <span
                       key={i}
                       className="inline-block text-gradient-metallic animate-fade-in"
                       style={{
                         animationDelay: `${0.5 + i * 0.05}s`,
-                        opacity: 0,
-                        animationFillMode: "forwards",
-                      }}
-                    >
-                      {letter}
-                    </span>
-                  ))}
-                  
-                  {/* Glowing orb with hands replacing the 'o' */}
-                  <span className="relative inline-block mx-2 align-middle" style={{ width: "0.8em", height: "0.8em" }}>
-                    <img
-                      src={glowingOrbHands}
-                      alt="Glowing orb"
-                      className="absolute inset-0 h-full w-full object-contain glow-orb animate-pulse-glow"
-                      style={{
-                        animationDelay: "0.7s",
-                        opacity: 0,
-                        animationFillMode: "forwards",
-                      }}
-                    />
-                  </span>
-                  
-                  {["l", "i", "o"].map((letter, i) => (
-                    <span
-                      key={i + 5}
-                      className="inline-block text-gradient-metallic animate-fade-in"
-                      style={{
-                        animationDelay: `${0.9 + i * 0.05}s`,
                         opacity: 0,
                         animationFillMode: "forwards",
                       }}
