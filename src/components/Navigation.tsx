@@ -1,24 +1,29 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
 
   const links = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Projects", path: "/projects" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", id: "hero" },
+    { name: "About", id: "about" },
+    { name: "Projects", id: "projects" },
+    { name: "Contact", id: "contact" },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const handleScroll = (id: string) => {
+    setIsOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-xl">
-      <div className="container mx-auto flex items-center justify-between px-4 py-4 md:px-6">
+      <div className="w-full flex items-center justify-between px-4 py-4 md:px-6">
         {/* Logo */}
         <Link to="/" className="font-signature text-2xl text-neon-lime glow-text">
           ZH
@@ -27,20 +32,13 @@ const Navigation = () => {
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`relative font-medium transition-colors duration-200 ${
-                isActive(link.path)
-                  ? "text-neon-lime"
-                  : "text-foreground hover:text-neon-lime"
-              }`}
+            <button
+              key={link.id}
+              onClick={() => handleScroll(link.id)}
+              className="relative font-medium transition-colors duration-200 text-foreground hover:text-neon-lime"
             >
               {link.name}
-              {isActive(link.path) && (
-                <span className="absolute -bottom-1 left-0 h-0.5 w-full bg-neon-lime glow-text" />
-              )}
-            </Link>
+            </button>
           ))}
         </div>
 
@@ -58,20 +56,15 @@ const Navigation = () => {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="border-t border-border/50 bg-background/95 backdrop-blur-xl md:hidden">
-          <div className="container mx-auto flex flex-col gap-4 px-4 py-6">
+          <div className="w-full flex flex-col gap-4 px-4 py-6">
             {links.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={`text-lg font-medium transition-colors duration-200 ${
-                  isActive(link.path)
-                    ? "text-neon-lime"
-                    : "text-foreground hover:text-neon-lime"
-                }`}
+              <button
+                key={link.id}
+                onClick={() => handleScroll(link.id)}
+                className="text-lg font-medium transition-colors duration-200 text-foreground hover:text-neon-lime"
               >
                 {link.name}
-              </Link>
+              </button>
             ))}
           </div>
         </div>

@@ -85,22 +85,23 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background noise-bg">
+    <div className="w-full bg-background noise-bg">
       <Navigation />
       
-      <main className="container mx-auto px-4 pt-24 pb-16 md:px-6">
+      <main className="w-full px-4 pt-24 pb-16 sm:px-6 md:px-8 lg:px-0">
+        <div className="mx-auto max-w-7xl">
         {/* Hero Section */}
-        <div className="mb-20 animate-fade-in-up">
-          <h1 className="mb-6 font-heading text-6xl font-black text-gradient-metallic md:text-7xl lg:text-8xl">
+        <div className="mb-16 sm:mb-20 animate-fade-in-up">
+          <h1 className="mb-4 sm:mb-6 font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gradient-metallic">
             Get In Touch
           </h1>
-          <p className="max-w-3xl text-xl text-muted-foreground md:text-2xl">
+          <p className="max-w-3xl text-lg sm:text-xl md:text-2xl text-muted-foreground">
             Have a project in mind or just want to chat? I'd love to hear from you. 
             Let's create something amazing together!
           </p>
         </div>
 
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid gap-8 sm:gap-12 lg:grid-cols-2">
           {/* Contact Form */}
           <div
             className="animate-fade-in-up"
@@ -178,10 +179,10 @@ const Contact = () => {
           >
             {/* Social Links */}
             <div>
-              <h2 className="mb-6 font-heading text-3xl font-bold text-foreground">
+              <h2 className="mb-4 sm:mb-6 font-heading text-2xl sm:text-3xl font-bold text-foreground">
                 Connect With Me
               </h2>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {socials.map((social, index) => {
                   const Icon = social.icon;
                   return (
@@ -201,17 +202,17 @@ const Contact = () => {
             </div>
 
             {/* Additional Info */}
-            <div className="rounded-3xl border border-border bg-card/50 p-8 backdrop-blur-sm">
-              <h2 className="mb-4 font-heading text-2xl font-bold text-foreground">
+            <div className="rounded-3xl border border-border bg-card/50 p-6 sm:p-8 backdrop-blur-sm">
+              <h2 className="mb-3 sm:mb-4 font-heading text-xl sm:text-2xl font-bold text-foreground">
                 Let's Collaborate
               </h2>
-              <p className="mb-6 text-muted-foreground">
+              <p className="mb-4 sm:mb-6 text-muted-foreground">
                 I'm currently available for freelance work and open to discussing 
                 new projects. Whether you need a full-stack application, a stunning 
                 frontend, or AI integration, I'm here to help bring your ideas to life.
               </p>
               
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 <div className="flex items-start gap-3">
                   <div className="rounded-full bg-neon-lime/10 p-2">
                     <Mail className="h-4 w-4 text-neon-lime" />
@@ -236,6 +237,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </main>
     </div>

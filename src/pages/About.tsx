@@ -39,16 +39,16 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background noise-bg">
+    <div className="w-full bg-background noise-bg">
       <Navigation />
       
-      <main className="container mx-auto px-4 pt-24 pb-16 md:px-6">
-        {/* Hero Section */}
-        <div className="mb-20 animate-fade-in-up">
-          <h1 className="mb-6 font-heading text-6xl font-black text-gradient-metallic md:text-7xl lg:text-8xl">
+      <main className="w-full px-4 pt-24 pb-16 sm:px-6 md:px-8 lg:px-0">
+        <div className="mx-auto max-w-7xl">
+        <div className="mb-16 sm:mb-20 animate-fade-in-up">
+          <h1 className="mb-4 sm:mb-6 font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gradient-metallic">
             About Me
           </h1>
-          <p className="max-w-3xl text-xl text-muted-foreground md:text-2xl">
+          <p className="max-w-3xl text-lg sm:text-xl md:text-2xl text-muted-foreground">
             I'm <span className="font-signature text-3xl text-neon-lime glow-text">Ziyavul Haq</span>, 
             a passionate web developer with 1 year of experience crafting digital experiences 
             that blend creativity with functionality.
@@ -56,13 +56,13 @@ const About = () => {
         </div>
 
         {/* Story Section */}
-        <section className="mb-20 animate-fade-in-up" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
-          <div className="grid gap-12 lg:grid-cols-2">
+        <section className="mb-16 sm:mb-20 animate-fade-in-up" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
+          <div className="grid gap-8 sm:gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="mb-6 font-heading text-4xl font-bold text-foreground">
+              <h2 className="mb-4 sm:mb-6 font-heading text-3xl sm:text-4xl font-bold text-foreground">
                 My Story
               </h2>
-              <div className="space-y-4 text-lg text-muted-foreground">
+              <div className="space-y-3 sm:space-y-4 text-base sm:text-lg text-muted-foreground">
                 <p>
                   My journey into web development started with a curiosity about how things work 
                   on the internet. What began as tinkering with HTML and CSS quickly evolved into 
@@ -82,7 +82,7 @@ const About = () => {
             </div>
 
             <div>
-              <h2 className="mb-6 font-heading text-4xl font-bold text-foreground">
+              <h2 className="mb-4 sm:mb-6 font-heading text-3xl sm:text-4xl font-bold text-foreground">
                 Journey
               </h2>
               <div className="space-y-6">
@@ -107,11 +107,11 @@ const About = () => {
         </section>
 
         {/* Technical Skills */}
-        <section className="mb-20 animate-fade-in-up" style={{ animationDelay: "0.4s", opacity: 0, animationFillMode: "forwards" }}>
-          <h2 className="mb-8 font-heading text-4xl font-bold text-foreground">
+        <section className="mb-16 sm:mb-20 animate-fade-in-up" style={{ animationDelay: "0.4s", opacity: 0, animationFillMode: "forwards" }}>
+          <h2 className="mb-6 sm:mb-8 font-heading text-3xl sm:text-4xl font-bold text-foreground">
             Technical Skills
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { category: "Frontend", skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Three.js"] },
               { category: "Backend", skills: ["Node.js", "Express", "REST APIs", "Database Design"] },
@@ -121,7 +121,7 @@ const About = () => {
                 key={index}
                 className="rounded-2xl border border-border bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-neon-lime/50 hover:bg-card"
               >
-                <h3 className="mb-4 font-heading text-xl font-bold text-neon-lime">
+                <h3 className="mb-3 sm:mb-4 font-heading text-lg sm:text-xl font-bold text-neon-lime">
                   {group.category}
                 </h3>
                 <ul className="space-y-2">
@@ -138,10 +138,10 @@ const About = () => {
 
         {/* Values */}
         <section className="animate-fade-in-up" style={{ animationDelay: "0.6s", opacity: 0, animationFillMode: "forwards" }}>
-          <h2 className="mb-8 font-heading text-4xl font-bold text-foreground">
+          <h2 className="mb-6 sm:mb-8 font-heading text-3xl sm:text-4xl font-bold text-foreground">
             What I Value
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
@@ -150,7 +150,7 @@ const About = () => {
                   className="group rounded-2xl border border-border bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-neon-lime/50 hover:bg-card hover:scale-105"
                 >
                   <Icon className="mb-4 h-10 w-10 text-neon-lime transition-transform duration-300 group-hover:scale-110" />
-                  <h3 className="mb-2 font-heading text-xl font-bold text-foreground">
+                  <h3 className="mb-2 font-heading text-lg sm:text-xl font-bold text-foreground">
                     {value.title}
                   </h3>
                   <p className="text-sm text-muted-foreground">
@@ -161,6 +161,7 @@ const About = () => {
             })}
           </div>
         </section>
+        </div>
       </main>
     </div>
   );

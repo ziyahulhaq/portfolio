@@ -49,28 +49,29 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background noise-bg">
+    <div className="w-full bg-background noise-bg">
       <Navigation />
       
-      <main className="container mx-auto px-4 pt-24 pb-16 md:px-6">
+      <main className="w-full px-4 pt-24 pb-16 sm:px-6 md:px-8 lg:px-0">
+        <div className="mx-auto max-w-7xl">
         {/* Hero Section */}
-        <div className="mb-20 animate-fade-in-up">
-          <h1 className="mb-6 font-heading text-6xl font-black text-gradient-metallic md:text-7xl lg:text-8xl">
+        <div className="mb-16 sm:mb-20 animate-fade-in-up">
+          <h1 className="mb-4 sm:mb-6 font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gradient-metallic">
             Projects
           </h1>
-          <p className="max-w-3xl text-xl text-muted-foreground md:text-2xl">
+          <p className="max-w-3xl text-lg sm:text-xl md:text-2xl text-muted-foreground">
             A collection of projects that showcase my skills in web development, 
             from AI integrations to 3D experiences.
           </p>
         </div>
 
         {/* Featured Projects */}
-        <section className="mb-12">
-          <h2 className="mb-8 flex items-center gap-2 font-heading text-3xl font-bold text-foreground">
+        <section className="mb-12 sm:mb-16">
+          <h2 className="mb-6 sm:mb-8 flex items-center gap-2 font-heading text-2xl sm:text-3xl font-bold text-foreground">
             <Sparkles className="h-8 w-8 text-neon-lime" />
             Featured Projects
           </h2>
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
             {projects
               .filter((p) => p.featured)
               .map((project, index) => (
@@ -83,19 +84,19 @@ const Projects = () => {
                     animationFillMode: "forwards",
                   }}
                 >
-                  <div className={`mb-6 h-48 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
+                  <div className={`mb-4 sm:mb-6 h-40 sm:h-48 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
                     <Sparkles className="h-16 w-16 text-neon-lime opacity-50 transition-all duration-300 group-hover:scale-125 group-hover:opacity-100" />
                   </div>
                   
-                  <h3 className="mb-3 font-heading text-2xl font-bold text-foreground">
+                  <h3 className="mb-2 sm:mb-3 font-heading text-xl sm:text-2xl font-bold text-foreground">
                     {project.title}
                   </h3>
                   
-                  <p className="mb-4 text-muted-foreground">
+                  <p className="mb-4 sm:mb-6 text-muted-foreground">
                     {project.description}
                   </p>
                   
-                  <div className="mb-6 flex flex-wrap gap-2">
+                  <div className="mb-4 sm:mb-6 flex flex-wrap gap-2">
                     {project.tags.map((tag, i) => (
                       <span
                         key={i}
@@ -123,10 +124,10 @@ const Projects = () => {
 
         {/* All Projects */}
         <section>
-          <h2 className="mb-8 font-heading text-3xl font-bold text-foreground">
+          <h2 className="mb-6 sm:mb-8 font-heading text-2xl sm:text-3xl font-bold text-foreground">
             More Projects
           </h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects
               .filter((p) => !p.featured)
               .map((project, index) => (
@@ -139,19 +140,19 @@ const Projects = () => {
                     animationFillMode: "forwards",
                   }}
                 >
-                  <div className={`mb-4 h-32 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
+                  <div className={`mb-3 sm:mb-4 h-28 sm:h-32 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
                     <Sparkles className="h-10 w-10 text-neon-lime opacity-50 transition-all duration-300 group-hover:scale-125 group-hover:opacity-100" />
                   </div>
                   
-                  <h3 className="mb-2 font-heading text-xl font-bold text-foreground">
+                  <h3 className="mb-2 font-heading text-lg sm:text-xl font-bold text-foreground">
                     {project.title}
                   </h3>
                   
-                  <p className="mb-4 text-sm text-muted-foreground">
+                  <p className="mb-3 sm:mb-4 text-sm text-muted-foreground">
                     {project.description}
                   </p>
                   
-                  <div className="mb-4 flex flex-wrap gap-2">
+                  <div className="mb-3 sm:mb-4 flex flex-wrap gap-2">
                     {project.tags.map((tag, i) => (
                       <span
                         key={i}
@@ -176,6 +177,7 @@ const Projects = () => {
               ))}
           </div>
         </section>
+        </div>
       </main>
     </div>
   );
