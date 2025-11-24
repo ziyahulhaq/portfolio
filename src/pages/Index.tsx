@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Sparkles, MoreVertical, Move } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Navigation from "@/components/Navigation";
 import glowingOrbHands from "@/assets/glowing-orb-hands.png";
 
 const Index = () => {
@@ -21,6 +22,8 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-background noise-bg">
+      <Navigation />
+      
       {/* Radial gradient overlay */}
       <div className="absolute inset-0 bg-gradient-radial from-hero-bg/50 via-background to-background" />
 
