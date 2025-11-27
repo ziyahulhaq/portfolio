@@ -61,13 +61,13 @@ const Contact = () => {
     {
       name: "GitHub",
       icon: Github,
-      link: "https://github.com",
+      link: "https://github.com/ziyahulhaq",
       color: "hover:text-foreground",
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      link: "https://linkedin.com",
+      link: "www.linkedin.com/in/ziyavul-haq-65b658377",
       color: "hover:text-blue-500",
     },
     {
@@ -79,7 +79,7 @@ const Contact = () => {
     {
       name: "Email",
       icon: Mail,
-      link: "mailto:ziyavulhaq@example.com",
+      link: "mailto:ziyavulhaq94@gmail.com",
       color: "hover:text-neon-lime",
     },
   ];
